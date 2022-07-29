@@ -3,7 +3,7 @@ public class Main {
 
         System.out.println("Задание №1");
 
-        int clientOS = 1;
+        int clientOS = 0;
         if (clientOS == 1) {
             System.out.println("Установите версию приложения для IOS по ссылке");
         } else {
@@ -12,24 +12,27 @@ public class Main {
 
         System.out.println("Задание №2");
 
-        int clientDeviceYear = 2013;
-        if (clientOS == 1 && clientDeviceYear >= 2015) {
-            System.out.println("Установите версию приложения для IOS по ссылке");
-        } else if (clientOS == 1 && clientDeviceYear <= 2015) {
-            System.out.println("Установите облегченную версию приложения для IOS по ссылке");
-        } else if (clientOS <= 1 && clientDeviceYear <= 2015) {
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        int clientDeviceYear = 2012;
+
+        if (clientOS == 0) {
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для IOS по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для IOS по ссылке");
+            }
         } else {
-            System.out.println("Установите версию приложения для Android по ссылке");
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для Android по ссылке");
+            }
         }
 
         System.out.println("Задание №3");
 
-        int year = 500;
+        int year = 2021;
 
-        if (year % 4 == 0 && year % 100 != 0) {
-            System.out.println("Год является високосным");
-        } else if (year % 400 == 0) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
             System.out.println("Год является високосным");
         } else {
             System.out.println("Год не является високосным");
@@ -37,15 +40,19 @@ public class Main {
 
         System.out.println("Задание №4");
 
-        int deliveryDistance = 19;
+        int deliveryDistance = 95;
 
-        if (deliveryDistance <= 20) {
-            System.out.println("Потребуется 1 день");
-        } else if (deliveryDistance > 20 && deliveryDistance < 60 ) {
-            System.out.println("Потребуется 2 дня");
-        } else {
-            System.out.println("Потребуется 3 дня");
+        int deliveryDays = 1;
+
+        if (deliveryDistance > 20) {
+            deliveryDays++;
         }
+
+        if (deliveryDistance > 60) {
+            deliveryDays++;
+        }
+
+        System.out.println("Потребуется дней: " + deliveryDays);
 
             System.out.println("Задание №5");
 
